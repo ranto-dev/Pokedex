@@ -13,7 +13,7 @@ pub fn run() {
         print!("Choix: ");
         io::stdout().flush().unwrap();
 
-        let mut choix: String= input::user_input();
+        let choix: String = input::user_input();
 
         match choix.trim() {
             "1" => views::afficher_liste(&pokedex),
@@ -31,9 +31,7 @@ fn ajouter(pokedex: &mut Vec<Pokemon>) {
     let mut s = String::new();
 
     println!("Nom:");
-    io::stdin().read_line(&mut s).unwrap();
-    let nom = s.trim().to_string();
-    s.clear();
+    let nom: String = input::user_input();
 
     println!("Types (séparés par virgule):");
     io::stdin().read_line(&mut s).unwrap();
