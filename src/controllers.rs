@@ -1,4 +1,4 @@
-use crate::{models::Pokemon, storage, views};
+use crate::{input, models::Pokemon, storage, views};
 use std::io::{self, Write};
 
 pub fn run() {
@@ -13,8 +13,7 @@ pub fn run() {
         print!("Choix: ");
         io::stdout().flush().unwrap();
 
-        let mut choix = String::new();
-        io::stdin().read_line(&mut choix).unwrap();
+        let mut choix: String= input::user_input();
 
         match choix.trim() {
             "1" => views::afficher_liste(&pokedex),

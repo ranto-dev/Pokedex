@@ -1,7 +1,7 @@
 use std::io;
 use std::str::FromStr;
 
-fn saisie_buffer() -> String {
+fn buffer_created() -> String {
     let mut input = String::new();
     io::stdin()
         .read_line(&mut input)
@@ -9,8 +9,8 @@ fn saisie_buffer() -> String {
     input
 }
 
-pub fn saisie_utilisateur<T: FromStr>() -> T {
-    let input = saisie_buffer();
+pub fn user_input<T: FromStr>() -> T {
+    let input = buffer_created();
     input
         .trim()
         .parse::<T>()
