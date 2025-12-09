@@ -28,46 +28,46 @@ pub fn run() {
 }
 
 fn ajouter(pokedex: &mut Vec<Pokemon>) {
-    let mut s = String::new();
+    let mut s: String = String::new();
 
     println!("Nom:");
     let nom: String = input::user_input();
 
     println!("Types (séparés par virgule):");
     io::stdin().read_line(&mut s).unwrap();
-    let types = s.trim().split(',').map(|x| x.trim().to_string()).collect();
+    let types: Vec<String> = s
+        .trim()
+        .split(',')
+        .map(|x: &str| x.trim().to_string())
+        .collect();
     s.clear();
 
     println!("HP:");
     io::stdin().read_line(&mut s).unwrap();
-    let hp = s.trim().parse().unwrap_or(0);
+    let hp: u32 = s.trim().parse().unwrap_or(0);
     s.clear();
 
     println!("ATK:");
     io::stdin().read_line(&mut s).unwrap();
-    let att = s.trim().parse().unwrap_or(0);
+    let att: u32 = s.trim().parse().unwrap_or(0);
     s.clear();
 
     println!("DEF:");
     io::stdin().read_line(&mut s).unwrap();
-    let def = s.trim().parse().unwrap_or(0);
+    let def: u32 = s.trim().parse().unwrap_or(0);
     s.clear();
 
     println!("Vitesse:");
-    io::stdin().read_line(&mut s).unwrap();
-    let vitesse = s.trim().parse().unwrap_or(0);
+    let vitesse: u32 = s.trim().parse().unwrap_or(0);
     s.clear();
 
-    println!("Total:");
-    io::stdin().read_line(&mut s).unwrap();
-    let total = s.trim().parse().unwrap_or(0);
-    s.clear();
+    let total: u32 = att + def + vitesse;
+    println!("Total: {total}");
 
     println!("ID de l'évolution:");
-    io::stdin().read_line(&mut s).unwrap();
-    let id_evolution = s.trim().parse().unwrap_or(0);
+    let id_evolution: u8 = 1;
 
-    let id = (pokedex.len() + 1) as u8;
+    let id: u8 = (pokedex.len() + 1) as u8;
 
     pokedex.push(Pokemon {
         id,
@@ -85,12 +85,12 @@ fn ajouter(pokedex: &mut Vec<Pokemon>) {
 }
 
 fn details(pokedex: &Vec<Pokemon>) {
-    let mut s = String::new();
+    let mut s: String = String::new();
     println!("ID du Pokémon à afficher:");
     io::stdin().read_line(&mut s).unwrap();
     let id: u8 = s.trim().parse().unwrap_or(255);
 
-    if let Some(p) = pokedex.iter().find(|p| p.id == id) {
+    if let Some(p) = pokedex.iter().find(|p: &&Pokemon| p.id == id) {
         views::afficher_details(p);
     } else {
         println!("Pokémon introuvable !");

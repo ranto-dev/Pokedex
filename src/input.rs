@@ -2,7 +2,7 @@ use std::io;
 use std::str::FromStr;
 
 fn buffer_created() -> String {
-    let mut input = String::new();
+    let mut input: String = String::new();
     io::stdin()
         .read_line(&mut input)
         .expect("Erreur lors de la lecture de l'entrée");
@@ -10,7 +10,7 @@ fn buffer_created() -> String {
 }
 
 pub fn user_input<T: FromStr>() -> T {
-    let input = buffer_created();
+    let input: String = buffer_created();
     input
         .trim()
         .parse::<T>()

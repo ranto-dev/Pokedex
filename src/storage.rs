@@ -13,7 +13,7 @@ pub fn load() -> Vec<Pokemon> {
         }
     }
 
-    let data = match fs::read_to_string(FILE_PATH) {
+    let data: String = match fs::read_to_string(FILE_PATH) {
         Ok(content) => content,
         Err(e) => {
             eprintln!("Erreur lors de la lecture du fichier {}: {}", FILE_PATH, e);
@@ -28,7 +28,7 @@ pub fn load() -> Vec<Pokemon> {
 }
 
 pub fn save(pokemons: &Vec<Pokemon>) {
-    let data = match serde_json::to_string_pretty(pokemons) {
+    let data: String = match serde_json::to_string_pretty(pokemons) {
         Ok(json_data) => json_data,
         Err(e) => {
             eprintln!("Erreur lors de la sérialisation en JSON : {}", e);

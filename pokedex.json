@@ -13,5 +13,19 @@
     "def": 22,
     "vitesse": 25,
     "id_evolution": 1
+  },
+  {
+    "id": 2,
+    "nom": "Bulbizare",
+    "types": [
+      "eau",
+      "petit"
+    ],
+    "total": 122,
+    "hp": 51,
+    "att": 66,
+    "def": 56,
+    "vitesse": 0,
+    "id_evolution": 1
   }
 ]
