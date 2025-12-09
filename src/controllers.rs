@@ -2,7 +2,7 @@ use crate::{input, models::Pokemon, storage, views};
 use std::io::{self, Write};
 
 pub fn run() {
-    let mut pokedex = storage::load();
+    let mut pokedex: Vec<Pokemon> = storage::load();
 
     loop {
         println!("\n=== MENU POKEDEX ===");
