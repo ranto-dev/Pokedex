@@ -1,31 +1,15 @@
 [
   {
     "id": 1,
-    "nom": "pikchu",
+    "nom": "Pikachu",
     "types": [
-      "electric",
-      "fourure",
-      "monion"
+      "Electric"
     ],
-    "total": 1555,
-    "hp": 54,
-    "att": 452,
-    "def": 22,
-    "vitesse": 25,
-    "id_evolution": 1
-  },
-  {
-    "id": 2,
-    "nom": "Bulbizare",
-    "types": [
-      "eau",
-      "petit"
-    ],
-    "total": 122,
-    "hp": 51,
-    "att": 66,
-    "def": 56,
-    "vitesse": 0,
-    "id_evolution": 1
+    "total": 320,
+    "hp": 35,
+    "att": 55,
+    "def": 40,
+    "vitesse": 90,
+    "id_evolution": 0
   }
 ]

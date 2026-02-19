@@ -1,4 +1,6 @@
-#[derive(Debug, Clone, serde::Serialize, serde::Deserialize)]
+use serde::{Deserialize, Serialize};
+
+#[derive(Serialize, Deserialize, Debug, Clone)]
 pub struct Pokemon {
     pub id: u8,
     pub nom: String,
