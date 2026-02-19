@@ -1,15 +1,1 @@
-[
-  {
-    "id": 1,
-    "nom": "Pikachu",
-    "types": [
-      "Electric"
-    ],
-    "total": 320,
-    "hp": 35,
-    "att": 55,
-    "def": 40,
-    "vitesse": 90,
-    "id_evolution": 0
-  }
-]
+[]
