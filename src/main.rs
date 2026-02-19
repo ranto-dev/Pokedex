@@ -1,10 +1,13 @@
 mod models;
 mod storage;
 mod commands;
+mod banner;
 
 use clap::{Parser, Subcommand};
 use models::Pokemon;
 use commands::*;
+use banner::show_banner;
+
 
 #[derive(Parser)]
 #[command(name = "Pokedex CLI")]
@@ -45,6 +48,8 @@ enum Commands {
 }
 
 fn main() {
+    show_banner();
+    
     let cli = Cli::parse();
 
     match cli.command {
