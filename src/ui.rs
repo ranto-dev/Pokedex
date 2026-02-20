@@ -1,6 +1,6 @@
 use dialoguer::{Input, Select};
 use colored::*;
-use prettytable::{Table, row, cell};
+use prettytable::{Table, row};
 
 use crate::models::Pokemon;
 use crate::storage::{load_pokemons, save_pokemons};
