@@ -22,56 +22,12 @@ This project is built with:
 * CLI argument parsing
 * Structured project architecture
 
-Rust ensures:
+Why Rust?
 
 * ⚡ High performance
 * 🔒 Memory safety (no garbage collector)
 * 🛠 Strong type system
 * 🚀 Reliable and maintainable code
-
-## 📦 Installation
-
-Make sure you have Rust installed:
-
-```bash
-rustc --version
-```
-
-Clone the repository:
-
-```bash
-git clone git@github.com:ranto-dev/Pokedex.git pokedex
-cd pokedex
-```
-
-Build the project:
-
-```bash
-cargo build --release
-```
-
-Run the application:
-
-```bash
-cargo run
-```
-
-
-## 🛠 Usage
-
-```bash
-pokedex add
-pokedex list
-pokedex update
-pokedex remove
-```
-
-Example:
-
-```bash
-pokedex add Pikachu Electric 25
-```
-
 
 
 ## 🎯 Goals of This Project
@@ -81,7 +37,6 @@ pokedex add Pikachu Electric 25
 * Build a clean and scalable architecture
 * Create a real-world terminal tool
 
----
 
 ## 👨‍💻 About Us
 
