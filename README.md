@@ -1,44 +1,51 @@
 # Pokedex CLI 🦀
 
-Manage your Pokémon list easily with my powerful and minimal CLI application built in **Rust**.
+An interactive Pokémon manager built in **Rust**, designed to provide a modern and professional terminal experience.
 
-Pokedex CLI allows you to create, manage and organize your Pokémon collection directly from your terminal.
+Pokedex CLI allows you to create, manage and organize your Pokémon collection using an interactive menu system and a beautifully formatted table display.
 
 
 ## ✨ Features
 
-* ➕ **add** — Add a new Pokémon into the Pokédex
-* 📋 **list** — Display all Pokémon stored in the Pokédex
-* ✏️ **update** — Update Pokémon information
-* ❌ **remove** — Remove a Pokémon from the Pokédex
+* 🎮 **Interactive Menu** — Navigate with arrow keys
+* ➕ **Add Pokémon** — Insert a new Pokémon interactively
+* 📋 **Modern Table View** — Display Pokémon in a clean formatted table
+* ✏️ **Update Pokémon** — Modify existing Pokémon data
+* 🗑 **Delete Pokémon** — Remove Pokémon safely
+* 💾 **JSON Storage** — Persistent local database
+* 🎨 **Colored CLI Interface** — Professional terminal styling
+* 🧭 **Custom ASCII Banner**
 
 
 ## 🚀 Stack
 
 This project is built with:
 
-* **Rust** — Fast, safe and memory-efficient programming language
-* Rust standard library for file management
-* CLI argument parsing
-* Structured project architecture
+* 🦀 **Rust** — Safe and high-performance systems language
+* 📦 `serde` / `serde_json` — Data serialization
+* 🎮 `dialoguer` — Interactive terminal prompts
+* 📊 `prettytable` — Modern table display
+* 🌈 `colored` — Terminal colors
+* 🖼 `figlet-rs` — ASCII banner generation
 
 Why Rust?
 
-* ⚡ High performance
-* 🔒 Memory safety (no garbage collector)
-* 🛠 Strong type system
-* 🚀 Reliable and maintainable code
+* ⚡ Blazing fast performance
+* 🔒 Memory safety without garbage collector
+* 🧠 Strong static typing
+* 🛠 Great ecosystem for CLI tools
+* 🚀 Production-ready tooling (`cargo`, `clippy`, etc.)
 
 
 ## 🎯 Goals of This Project
 
-* Practice Rust CLI development
-* Improve file handling and data persistence
-* Build a clean and scalable architecture
-* Create a real-world terminal tool
+* Build a real-world interactive CLI application
+* Practice modular Rust architecture
+* Implement persistent JSON storage
+* Design a modern terminal user experience
+* Improve UX inside terminal applications
 
-
-## 👨‍💻 About Us
+## 👨‍💻 Author
 
 Pokedex CLI is developed by **[@ranto-dev](https://github.com/ranto-dev)**.
 
@@ -47,7 +54,7 @@ Passionate about:
 * 🦀 Rust
 * 🌐 Web development
 * ⚙️ Backend engineering
-* 🚀 Building useful tools
+* 🧠 System design
+* 🚀 Building useful developer tools
 
 > “Code is not just lines, it's architecture and vision.”
-
