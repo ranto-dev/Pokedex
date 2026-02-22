@@ -47,14 +47,4 @@ Why Rust?
 
 ## 👨‍💻 Author
 
-Pokedex CLI is developed by **[@ranto-dev](https://github.com/ranto-dev)**.
-
-Passionate about:
-
-* 🦀 Rust
-* 🌐 Web development
-* ⚙️ Backend engineering
-* 🧠 System design
-* 🚀 Building useful developer tools
-
-> “Code is not just lines, it's architecture and vision.”
+Pokedex CLI is developed by **[@ranto-dev](https://ranto-dev.vercel.app)**.
