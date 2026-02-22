@@ -6,5 +6,6 @@ pub fn show_banner() {
     let figure = font.convert("POKEDEX").unwrap();
 
     println!("{}", figure.to_string().bright_red().bold());
-    println!("{}", "⚡ Interactive Pokemon Manager ⚡\n".bright_yellow());
+    println!("{}", "⚡ Interactive Pokemon Manager ⚡".bright_blue());
+    println!("👨 Developed by Ranto Andrianandraina\n")
 }

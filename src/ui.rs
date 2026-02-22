@@ -1,5 +1,5 @@
-use dialoguer::{Input, Select};
 use colored::*;
+use dialoguer::{Input, Select};
 use prettytable::{Table, row};
 
 use crate::models::Pokemon;
@@ -8,11 +8,11 @@ use crate::storage::{load_pokemons, save_pokemons};
 pub fn start() {
     loop {
         let options = vec![
-            "➕ Add Pokemon",
-            "📋 List Pokemons",
-            "✏️ Update Pokemon",
-            "🗑 Delete Pokemon",
-            "🚪 Exit",
+            "Add Pokemon",
+            "List Pokemons",
+            "Update Pokemon",
+            "Delete Pokemon",
+            "Exit",
         ];
 
         let selection = Select::new()
@@ -39,7 +39,10 @@ pub fn start() {
 fn add_pokemon() {
     let id: u8 = Input::new().with_prompt("ID").interact().unwrap();
     let nom: String = Input::new().with_prompt("Name").interact().unwrap();
-    let types_input: String = Input::new().with_prompt("Types (comma separated)").interact().unwrap();
+    let types_input: String = Input::new()
+        .with_prompt("Types (comma separated)")
+        .interact()
+        .unwrap();
     let total: u32 = Input::new().with_prompt("Total").interact().unwrap();
     let hp: u32 = Input::new().with_prompt("HP").interact().unwrap();
     let att: u32 = Input::new().with_prompt("Attack").interact().unwrap();
@@ -50,7 +53,10 @@ fn add_pokemon() {
     let pokemon = Pokemon {
         id,
         nom,
-        types: types_input.split(',').map(|s| s.trim().to_string()).collect(),
+        types: types_input
+            .split(',')
+            .map(|s| s.trim().to_string())
+            .collect(),
         total,
         hp,
         att,
@@ -70,7 +76,7 @@ fn list_pokemons() {
     let pokemons = load_pokemons();
 
     if pokemons.is_empty() {
-        println!("{}", "No Pokemon found.".yellow());
+        println!("{}", "No Pokemon found.".red());
         return;
     }
 
@@ -97,7 +103,10 @@ fn list_pokemons() {
 }
 
 fn delete_pokemon() {
-    let id: u8 = Input::new().with_prompt("Enter Pokemon ID to delete").interact().unwrap();
+    let id: u8 = Input::new()
+        .with_prompt("Enter Pokemon ID to delete")
+        .interact()
+        .unwrap();
 
     let mut pokemons = load_pokemons();
     pokemons.retain(|p| p.id != id);
@@ -107,7 +116,10 @@ fn delete_pokemon() {
 }
 
 fn update_pokemon() {
-    let id: u8 = Input::new().with_prompt("Enter Pokemon ID to update").interact().unwrap();
+    let id: u8 = Input::new()
+        .with_prompt("Enter Pokemon ID to update")
+        .interact()
+        .unwrap();
 
     let nom: String = Input::new().with_prompt("New Name").interact().unwrap();
     let types_input: String = Input::new().with_prompt("New Types").interact().unwrap();
@@ -116,7 +128,10 @@ fn update_pokemon() {
     let att: u32 = Input::new().with_prompt("New Attack").interact().unwrap();
     let def: u32 = Input::new().with_prompt("New Defense").interact().unwrap();
     let vitesse: u32 = Input::new().with_prompt("New Speed").interact().unwrap();
-    let id_evolution: u8 = Input::new().with_prompt("New Evolution ID").interact().unwrap();
+    let id_evolution: u8 = Input::new()
+        .with_prompt("New Evolution ID")
+        .interact()
+        .unwrap();
 
     let mut pokemons = load_pokemons();
 
@@ -125,7 +140,10 @@ fn update_pokemon() {
             *p = Pokemon {
                 id,
                 nom: nom.clone(),
-                types: types_input.split(',').map(|s| s.trim().to_string()).collect(),
+                types: types_input
+                    .split(',')
+                    .map(|s| s.trim().to_string())
+                    .collect(),
                 total,
                 hp,
                 att,
