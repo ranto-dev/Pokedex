@@ -1,6 +1,6 @@
+use crate::models::Pokemon;
 use std::fs::{File, OpenOptions};
 use std::io::{Read, Write};
-use crate::models::Pokemon;
 
 const FILE_PATH: &str = "pokedex.json";
 
