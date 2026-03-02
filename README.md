@@ -20,3 +20,22 @@
 - **Update Pokémon** — Modify existing Pokémon data
 - **Delete Pokémon** — Remove Pokémon safely
 - **JSON Storage** — Persistent local database
+
+## Mock Pokemon example
+
+```json
+[
+  {
+    "id": 1,
+    "nom": "Bulbizard",
+    "types": ["eau"],
+    "total": 45,
+    "hp": 40,
+    "att": 32,
+    "def": 44,
+    "vitesse": 56,
+    "id_evolution": 1
+  },
+  ...
+]
+```
