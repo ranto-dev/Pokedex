@@ -18,6 +18,7 @@ async fn main() -> std::io::Result<()> {
         App::new()
             .app_data(web::Data::new(database.clone()))
             .route("/pokemons", web::get().to(handlers::get_all))
+            .route("/pokemons/{id}", web::get().to(handlers::get_one))
             .route("/pokemons", web::post().to(handlers::create))
             .route("/pokemons/{id}", web::delete().to(handlers::delete))
     })

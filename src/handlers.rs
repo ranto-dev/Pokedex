@@ -19,6 +19,25 @@ pub async fn get_all(db: web::Data<Database>) -> impl Responder {
     HttpResponse::Ok().json(pokemons)
 }
 
+// GET /pokemons/{id}
+pub async fn get_one(db: web::Data<Database>, path: web::Path<String>) -> impl Responder {
+    let collection = db.collection::<Pokemon>("pokemons");
+
+    // Convertir String -> ObjectId
+    let obj_id = match ObjectId::parse_str(path.into_inner()) {
+        Ok(id) => id,
+        Err(_) => {
+            return HttpResponse::BadRequest().body("Invalid ObjectId format");
+        }
+    };
+
+    match collection.find_one(doc! { "_id": obj_id }, None).await {
+        Ok(Some(pokemon)) => HttpResponse::Ok().json(pokemon),
+        Ok(None) => HttpResponse::NotFound().body("Pokemon not found"),
+        Err(_) => HttpResponse::InternalServerError().finish(),
+    }
+}
+
 // POST /pokemons
 pub async fn create(db: web::Data<Database>, new_pokemon: web::Json<Pokemon>) -> impl Responder {
     let collection = db.collection::<Pokemon>("pokemons");
