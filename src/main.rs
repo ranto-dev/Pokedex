@@ -12,7 +12,7 @@ async fn main() -> std::io::Result<()> {
 
     let database = connect_db().await;
 
-    println!("🚀 Server running on http://0.0.0.0:8080");
+    println!("Server running on http://0.0.0.0:8080");
 
     HttpServer::new(move || {
         App::new()

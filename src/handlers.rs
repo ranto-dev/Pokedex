@@ -15,7 +15,6 @@ pub async fn get_all(db: web::Data<Database>) -> impl Responder {
     while let Some(result) = cursor.next().await {
         pokemons.push(result.unwrap());
     }
-
     HttpResponse::Ok().json(pokemons)
 }
 
@@ -44,6 +43,8 @@ pub async fn create(db: web::Data<Database>, new_pokemon: web::Json<Pokemon>) ->
 
     let mut pokemon = new_pokemon.into_inner();
     pokemon.id = None;
+
+    println!("{:#?}", &pokemon);
 
     let insert_result = collection.insert_one(pokemon, None).await.unwrap();
 
