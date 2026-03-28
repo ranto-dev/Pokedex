@@ -1,167 +1,85 @@
-# Pokedex 🦀
+# 🦀 Pokedex API
 
+<div align="center">
 
-<div>
-  <p align="center">
-    Pokedex REST API is a backend service built in Rust using Actix Web.  
-    It exposes a RESTful interface to manage Pokémon data and stores information in MongoDB.
-  </p>
-  <br />
-  <p>
-    This project is a refactored version of a previous CLI-based Pokédex application, redesigned into a scalable and production-ready web API architecture.
-  </p>
+<img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png" width="200" alt="Pikachu"/>
+
+### ⚡ Pokedex REST API built with Rust & Actix Web
+
 </div>
 
+<br/>
 
-## Documentation
+![Rust](https://img.shields.io/badge/Rust-000000?logo=rust&logoColor=white) ![Actix](https://img.shields.io/badge/Actix_Web-3C3C3C) ![MongoDB](https://img.shields.io/badge/MongoDB-4EA94B?logo=mongodb&logoColor=white) ![Docker](https://img.shields.io/badge/Docker-2496ED?logo=docker&logoColor=white) ![License](https://img.shields.io/badge/License-MIT-yellow.svg) ![Status](https://img.shields.io/badge/Status-In_Progress-orange)
 
-Base URL:
+## 📖 Description
 
-```
-[http://localhost:8080](http://localhost:8080)
-```
+Pokedex REST API is a backend service built in **Rust** using **Actix Web**.
+It exposes a RESTful interface to manage Pokémon data and stores information in **MongoDB**.
 
-#### 🔹 Get All Pokemons
+This project is a refactored version of a previous CLI-based Pokédex application, redesigned into a scalable and production-ready web API architecture.
 
-```
-GET /pokemons
-````
+## 🌐 Documentation
 
-Response:
+You can read documentation from [Here](/docs/api.md)
 
-```json
-[
-  {
-    "_id": "65f4b1b2c5f8d9e4c1234567",
-    "nom": "Bulbasaur",
-    "types": ["Grass", "Poison"],
-    "total": 318,
-    "hp": 45,
-    "att": 49,
-    "def": 49,
-    "vitesse": 45,
-    "id_evolution": 2
-  }
-]
-````
+## ✨ Features
 
+- **RESTful API Design**
+  Clean and structured endpoints following REST principles for managing Pokémon data.
 
-#### 🔹 Get Pokemon By ID
+- **CRUD Operations**
+  Create, retrieve, and delete Pokémon records with ease.
 
-```
-GET /pokemons/{id}
-```
+- **High Performance with Rust**
+  Built using Rust and Actix Web for fast and memory-safe backend performance.
 
-Example:
+- **MongoDB Integration**
+  NoSQL database for flexible and scalable data storage.
 
-```
-GET /pokemons/65f4b1b2c5f8d9e4c1234567
-```
+- **Dockerized Environment**
+  Fully containerized setup using Docker and Docker Compose for easy deployment.
 
-Responses:
+- **JSON Serialization with Serde**
+  Efficient data parsing and serialization using Serde.
 
-* `200 OK` → Pokemon found
-* `404 Not Found`
-* `400 Bad Request` → Invalid ObjectId format
+- **Modular Architecture**
+  Clean and maintainable code structure following best backend practices.
 
+- **Error Handling**
+  Proper HTTP status codes and structured error responses.
 
-#### 🔹 Create a Pokemon
+- **API Ready for Scalability**
+  Designed to be extended with authentication, pagination, and filtering.
 
-```
-POST /pokemons
-Content-Type: application/json
-```
+## 🧰 Tech Stack
 
-Request body:
+- 🦀 Rust
+- ⚡ Actix Web
+- 🍃 MongoDB
+- 🐳 Docker
+- 📦 Docker Compose
+- 🔄 Serde (JSON serialization)
+- 🔗 MongoDB Rust Driver
 
-```json
-{
-  "nom": "Charmander",
-  "types": ["Fire"],
-  "total": 309,
-  "hp": 39,
-  "att": 52,
-  "def": 43,
-  "vitesse": 65,
-  "id_evolution": 5
-}
-```
+## 🚀 Upcoming Features
 
-Response:
+- [ ] Update Pokemon (PUT / PATCH)
+- [ ] Pagination support
+- [ ] Search by type or name
+- [ ] Filtering and sorting
+- [ ] Request validation
+- [ ] Centralized error handling
+- [ ] Logging middleware
+- [ ] JWT authentication
+- [ ] Swagger / OpenAPI docs
+- [ ] Unit & integration tests
+- [ ] CI/CD pipeline
+- [ ] Production deployment
 
-* `201 Created` → Returns inserted ObjectId
+## 🎯 Project Goals
 
-
-#### 🔹 Delete a Pokemon
-
-```
-
-DELETE /pokemons/{id}
-```
-
-Response:
-
-* `200 OK`
-* `404 Not Found`
-
-
-## Running with Docker
-
-Make sure Docker is installed.
-
-```bash
-# verify docker version
-docker --version
-
-# verify docker compose version
-docker compose version
-```
-
-Start the project:
-
-```bash
-# build container with docker compose
-docker compose up --build
-```
-
-The API will run on:
-
-```
-http://localhost:8080
-```
-
-MongoDB runs inside a container and is connected internally via environment variables.
-
-## Tech Stack
-
-* Rust
-* Actix Web
-* MongoDB
-* Docker
-* Docker Compose
-* Serde (JSON serialization)
-* MongoDB Rust Driver
-
-
-## Upcoming Features
-
-* Update Pokemon endpoint (PUT / PATCH)
-* Pagination support
-* Search by type or name
-* Filtering and sorting
-* Request validation
-* Centralized error handling
-* Logging middleware
-* JWT authentication
-* Swagger / OpenAPI documentation
-* Unit and integration testing
-* CI/CD pipeline
-* Production deployment configuration
-
-
-## Project Goals
-
-* Practice building production-grade APIs in Rust
-* Learn MongoDB integration
-* Apply clean architecture principles
-* Improve Docker-based development workflow
+- Build production-grade APIs in Rust
+- Learn MongoDB integration
+- Apply clean architecture principles
+- Improve Docker workflow
