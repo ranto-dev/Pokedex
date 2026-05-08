@@ -1,3 +1,5 @@
+// Models (DB Schema)
+
 use mongodb::bson::oid::ObjectId;
 use serde::{Deserialize, Serialize};
 
@@ -5,7 +7,6 @@ use serde::{Deserialize, Serialize};
 pub struct Pokemon {
     #[serde(rename = "_id", skip_serializing_if = "Option::is_none")]
     pub id: Option<ObjectId>,
-
     pub nom: String,
     pub types: Vec<String>,
     pub total: u32,

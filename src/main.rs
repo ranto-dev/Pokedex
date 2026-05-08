@@ -1,3 +1,4 @@
+// Main
 mod db;
 mod handlers;
 mod models;
@@ -10,7 +11,7 @@ use dotenv::dotenv;
 async fn main() -> std::io::Result<()> {
     dotenv().ok();
 
-    let database = connect_db().await;
+    let database: mongodb::Database = connect_db().await;
 
     println!("Server running on http://0.0.0.0:8080");
 
